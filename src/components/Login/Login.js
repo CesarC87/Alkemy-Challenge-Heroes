@@ -10,7 +10,7 @@ const Login = () => {
     const [fail, setFail] = useState(false)
   return (
     <>
-    <h1>SuperHero App!</h1>
+    <h1 className="loginTitle">SuperHero App!</h1>
       <Formik 
       initialValues={{
           email: '',

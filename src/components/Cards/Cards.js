@@ -1,9 +1,10 @@
 import React from 'react'
 import styles from "./Cards.module.css";
-// import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const Cards = ({id, name, image, intelligence, strength, speed, durability, power, combat}) => {
     return (
+        <Link style={{ textDecoration: "none", color: "inherit" }} to={`/Heroe/${id}`}>
         <div className={styles.card}>
             <div className={styles.titleDiv}>  
               <h3 className={styles.title}>{name}</h3> 
@@ -27,6 +28,7 @@ const Cards = ({id, name, image, intelligence, strength, speed, durability, powe
                   Ver detalle
                 </button>
           </div>
+          </Link>
     )
 }
 

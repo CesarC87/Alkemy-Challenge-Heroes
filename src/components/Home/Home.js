@@ -11,21 +11,17 @@ const Home = () => {
 
 
     useEffect(() => {
-
         setLoading(true);
-
         axios.get(`http://localhost:3004`)
     .then(result => {
-        let heroes = result.data.results
-        console.log("esto es heroes:", heroes)
+        let heroes = result.data.results        
         setData(heroes.map((hero) => ({...hero})))        
     })
     .catch(err =>{
         console.log(err)
     }
     )
-    .finally(() => {
-        console.log("esto es data:", data)
+    .finally(() => {        
         setLoading(false)
     })
     }, [])
@@ -35,6 +31,7 @@ const Home = () => {
             <Header/>  
             Hola desde Home
             {loading && <p>Cargando...</p>}
+            {console.log(data)}
             <CardContainer data={data}/>
         </div>
     )

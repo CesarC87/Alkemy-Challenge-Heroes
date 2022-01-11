@@ -9,7 +9,7 @@ const CardContainer = ({data}) => {
                 return(
                     <div>
                       <Cards
-                          key={heroe.id}
+                          id={heroe.id}
                           name={heroe.name}
                           image={heroe.image.url}
                           intelligence={heroe.powerstats.intelligence}
