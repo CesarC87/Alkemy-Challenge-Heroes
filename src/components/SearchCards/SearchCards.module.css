@@ -66,7 +66,7 @@
   font-family: "quicksand", sans-serif;
   border: none;
   color: #ffffff;
-  background-color: #11373c;  
+  background-color: #11373c;
   transition: background 200ms ease-in, color 200ms ease-in;
   border-radius: 5px;
   cursor: pointer;
@@ -91,4 +91,11 @@ html h3 {
 .bottom_card {
   display: flex;
   flex-direction: row;
+}
+.maxReached {
+  color: white;
+  background-color: #e2b42b;
+  font-family: "quicksand";
+  padding: 2%;
+  font-weight: bold;
 }

@@ -1,0 +1,38 @@
+.CustomArrowsContainer {
+  margin: 30px;
+}
+
+.slick-slider .slick-next,
+.slick-slider .slick-prev {
+  color: black;
+  font-size: xx-large;
+  background: white;
+}
+
+.slick-slider .slick-next::before,
+.slick-slider .slick-prev::before {
+  color: black;
+  font-size: xx-large;
+  background-color: white;
+}
+.slick-slider .slick-next {
+  margin: 0 2% 0 0;
+}
+.slick-slide .slick-active {
+    width: fit-content;
+}
+.slick-track {
+  display: flex;
+  flex-direction: row;
+}
+.h4Slider {
+  font-family: "Raleway";
+  background: linear-gradient(45deg, #0095ff, #0bd2ff, #1feaff, #42fcfffb);
+  color: white;
+  width: fit-content;
+  font-size: 1.2rem;
+  padding: 0.8% 1.2%;
+  margin: 0 auto 2%;
+  border-radius: 20px;
+  font-weight: 400;
+}

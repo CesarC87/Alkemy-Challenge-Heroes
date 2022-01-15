@@ -1,0 +1,10 @@
+.cargando {
+  background-color: #151515;
+  color: white;
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: 20px; 
+  position: absolute;
+  top: 35%;
+  left: 44%;
+}

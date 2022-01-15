@@ -1,0 +1,22 @@
+.cardDetail {
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(45deg, #114843, #2a8269, #20b1ea, #044b8a);
+  margin: 10% 0 0 0;
+  border-radius: 10px;
+  box-shadow: 0 19px 17px rgb(0, 0, 0);
+  width: fit-content;
+  margin: 5% auto;
+}
+
+.cardDetail__izq,
+.cardDetail__der {
+  margin: 1%;
+  font-family: "Bebas Neue", "quicksand";
+  color: white;
+  font-size: 1.5rem;
+  height: 500px;
+}
+.cardDetail__der img {
+  height: inherit;
+}

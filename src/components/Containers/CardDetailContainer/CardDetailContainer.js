@@ -3,12 +3,13 @@ import "./CardDetailContainer.css";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import CardDetail from "../CardDetail/CardDetail";
+import CardDetail from "../../CardDetail/CardDetail";
 
 const CardDetailContainer = () => {
   const [heroData, setHeroData] = useState([]);
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     let isMounted = true;
@@ -17,7 +18,8 @@ const CardDetailContainer = () => {
       .get(`http://localhost:3004/${id}`)
       .then((result) => {
           if(isMounted){
-              setHeroData(result.data.biography['full-name']);              
+              setHeroData(result.data);  
+              setIsLoaded(true)            
           }
       }) 
       .catch((err) => {
@@ -32,11 +34,10 @@ const CardDetailContainer = () => {
   return (
     <div>
         {console.log(heroData)} 
-      <CardDetail 
-        heroData={heroData}
-         />
+        {isLoaded ? <CardDetail  heroData={heroData} /> : <p className="cargando">Cargando...</p>}
     </div>
   );
 };
 
 export default CardDetailContainer;
+

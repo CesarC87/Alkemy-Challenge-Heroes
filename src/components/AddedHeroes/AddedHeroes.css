@@ -1,0 +1,4 @@
+.addedHeroes {
+    display: flex;
+    flex-direction: row;
+}

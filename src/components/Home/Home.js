@@ -1,40 +1,23 @@
-import React from 'react'
-import Header from '../Header/Header'
-import CardContainer from '../CardContainer/CardContainer'
-import axios from 'axios'
-import { useState, useEffect } from 'react'
+import React from "react";
+import Header from "../Header/Header";
+import CardSearchContainer from "../Containers/CardSearchContainer/CardSearchContainer";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import AddedHeroes from "../AddedHeroes/AddedHeroes";
 
+const Home = () => {
+  
+return (
+    <div>
+      <Header />                 
+      {/* {isLoaded ? <AddedHeroes heroData={heroData} /> : <p className="cargando">Cargando...</p>} */}      
+      <AddedHeroes/>
+      <CardSearchContainer />
+     
+    </div>
+  );
+};
 
-const Home = () => {    
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(false)
+export default Home;
 
-
-    useEffect(() => {
-        setLoading(true);
-        axios.get(`http://localhost:3004`)
-    .then(result => {
-        let heroes = result.data.results        
-        setData(heroes.map((hero) => ({...hero})))        
-    })
-    .catch(err =>{
-        console.log(err)
-    }
-    )
-    .finally(() => {        
-        setLoading(false)
-    })
-    }, [])
-    
-    return (
-        <div>
-            <Header/>  
-            Hola desde Home
-            {loading && <p>Cargando...</p>}
-            {console.log(data)}
-            <CardContainer data={data}/>
-        </div>
-    )
-}
-
-export default Home
+// setHeroData(heroes.map((hero) => ({ ...hero })));    
