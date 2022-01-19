@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Alkemy-Challenge-Heroes/static/css/main.0c260d40.css",
+    "main.js": "/Alkemy-Challenge-Heroes/static/js/main.270ab31f.js",
+    "index.html": "/Alkemy-Challenge-Heroes/index.html",
+    "main.0c260d40.css.map": "/Alkemy-Challenge-Heroes/static/css/main.0c260d40.css.map",
+    "main.270ab31f.js.map": "/Alkemy-Challenge-Heroes/static/js/main.270ab31f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0c260d40.css",
+    "static/js/main.270ab31f.js"
+  ]
+}
