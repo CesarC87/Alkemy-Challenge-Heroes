@@ -1,6 +1,6 @@
-import React , {useState, useContext} from "react";
+import React , {useState, useContext, useEffect} from "react";
 import { Formik, Field, ErrorMessage, Form } from "formik";
-import { Link } from "react-router-dom";
+import { Link , useNavigate } from "react-router-dom";
 import "./Login.css"
 import { Container, Row, Col} from 'react-bootstrap'
 import { AuthContext } from "../../context/AuthContext";
@@ -15,6 +15,9 @@ const Login = () => {
       localStorage.setItem('email', process.env.REACT_APP_USER_EMAIL)
       localStorage.setItem('password', process.env.REACT_APP_USER_PASS)      
     }
+    
+    const Navigate = useNavigate();
+
   return (
     <>
     <Container>
@@ -42,7 +45,8 @@ const Login = () => {
           if(inputs.email === email & inputs.password === pass){
               setSuccess(true)
               setLogin(true)       
-              setFail(false)       
+              setFail(false)
+              loggedIn()       
           }else {
               setFail(true)
           }
@@ -80,13 +84,15 @@ const Login = () => {
         )}
       </Formik>
         {success && (         
-          loggedIn(),
-          <div className="success">                     
-            <p className="successfulSend">Bienvenido!</p>
-            <Link to='/Home'>
-              <button className="ingresar">Ingresar al sitio</button>
-            </Link>                        
+             isLoggedIn ? (
+              <div className="success">                     
+              <p className="successfulSend">Bienvenido!</p>
+              
+                <button className="ingresar" onClick={()=>{Navigate('/Home')}}>Ingresar al sitio</button>
+                                     
           </div>
+             )  : <p>Cargando...</p>     
+          
           ) }
         {fail && <p className="failToSend">Email o password incorrecto/s</p>}
         </Col>
