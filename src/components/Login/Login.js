@@ -9,14 +9,21 @@ const Login = () => {
     const [success, setSuccess] = useState(false)
     const [login, setLogin] = useState(false)
     const [fail, setFail] = useState(false)
-    const {  loggedOut , isLoggedIn } = useContext(AuthContext)
+    const { isLoggedIn } = useContext(AuthContext)
 
     const loggedIn = () => {
       localStorage.setItem('email', process.env.REACT_APP_USER_EMAIL)
-      localStorage.setItem('password', process.env.REACT_APP_USER_PASS)      
-    }
+      localStorage.setItem('password', process.env.REACT_APP_USER_PASS)   
+      setTimeout(() => {
+        console.log(isLoggedIn);
+      }, 2000);   
+    }    
+    const Navigate = useNavigate();   
+
+    // useEffect(() => {
+    //   success && loggedIn()     
+    // }, [success]); 
     
-    const Navigate = useNavigate();
 
   return (
     <>
@@ -49,8 +56,7 @@ const Login = () => {
               loggedIn()       
           }else {
               setFail(true)
-          }
-          
+          }          
       }}>
         {(formikProps) => (
             !login &&
@@ -83,15 +89,12 @@ const Login = () => {
           </Form>
         )}
       </Formik>
-        {success && (         
-             isLoggedIn ? (
+        {success && (    
+            
               <div className="success">                     
-              <p className="successfulSend">Bienvenido!</p>
-              
-                <button className="ingresar" onClick={()=>{Navigate('/Home')}}>Ingresar al sitio</button>
-                                     
-          </div>
-             )  : <p>Cargando...</p>     
+              <p className="successfulSend">Bienvenido!</p>              
+                <button className="ingresar" onClick={()=>{Navigate('/Home')}}>Ingresar al sitio</button>                                     
+              </div>   
           
           ) }
         {fail && <p className="failToSend">Email o password incorrecto/s</p>}

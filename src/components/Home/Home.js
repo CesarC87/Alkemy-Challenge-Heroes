@@ -10,7 +10,10 @@ const Home = () => {
   const loggedOut = () => {
     localStorage.removeItem('email', process.env.REACT_APP_USER_EMAIL)
     localStorage.removeItem('password', process.env.REACT_APP_USER_PASS)
-    console.log(isLoggedIn);
+    setTimeout(() => {
+      console.log(isLoggedIn);
+    }, 2000);
+    
   }
 return (
     <>    
