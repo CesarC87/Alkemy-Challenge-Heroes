@@ -18,7 +18,7 @@
 .formulario label {
   font-family: "quicksand";
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: var(--fs-500);
   margin: 0 0 2% 0;
   color: white;
 }
@@ -36,7 +36,7 @@
   background-color: var(--btnGreen);
   border: hidden;
   border-radius: 15px;
-  font-size: 1.5rem;
+  font-size: var(--fs-500);
   padding: 1% 3%;
   cursor: pointer;
 }
@@ -52,14 +52,14 @@
   width: fit-content;
 }
 .successfulSend {
-  font-size: 3.5rem;
+  font-size: var(--fs-XL);
   font-weight: bold;
   margin: 5% auto;
   background-color: #4e4f51;
 }
 .loginTitle {
   color: white;
-  margin: 5% 0 3% 0;
+  margin: 2% auto;
   background: auto;
   background: linear-gradient(45deg, #0095ff, #0bd2ff, #1feaff, #42fcff);
   width: fit-content;
@@ -71,4 +71,27 @@
   height: 12rem;
   width: 30%;
   border-radius: 2rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
+
+@media screen and (max-width: 786px) {
+  .formulario input {
+    width: 90%;
+  }
+  :root {
+    --fs-500: clamp(1rem, 3vw, 1.5 rem);    
+  }
+}
+/* @media screen and (max-width: 1346px) {
+  :root {
+    --fs-XL: 2.5rem;
+  }
+} */
+/* @media screen and (min-width: 320px max-width: 1010px) {
+  :root {
+    --fs-XL: 2rem;
+  }
+} */

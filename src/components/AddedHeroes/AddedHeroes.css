@@ -1,4 +1,57 @@
 .addedHeroes {
-    display: flex;
-    flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 280px);
+  margin: 2% 16%;
+  grid-column-gap: 10px;
+  background-color: #11373c;
+  padding: 2% 2% 1%;
+  border-radius: 20px;
+  border: 1px solid aliceblue;
+}
+.h2Vacio {
+  color: white;
+  background-color: #242424;
+  width: fit-content;
+  margin: 2% auto 0;
+  padding: 1%;
+  border-radius: 10px;
+}
+.tuEquipo {
+  color: white;
+  background-color: #242424;
+  width: fit-content;
+  height: fit-content;
+  padding: 1%;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #114843, #2a8269, #20b1ea, #044b8a);
+  font-family: "quicksand";
+  margin: 0;
+}
+.teamDetailContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: linear-gradient(45deg, #114843, #2a8269, #20b1ea, #044b8a);
+  border-radius: 20px;
+  border: 1px solid aliceblue;
+  margin: 1% auto 0%;
+  color: white;
+  width: fit-content;
+  color: white;
+}
+.heightAndweight {
+  display: flex;
+  flex-direction: column;
+  background: #2260574d;
+  border-radius: 20px 0 0 20px;
+  padding: 2%;
+  font-family: "quicksand";
+  font-weight: bold;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.bestStat {
+  background: #2f2d2c;
+  padding: 5%;
+  border-radius: 10px;
 }

@@ -92,10 +92,13 @@ html h3 {
   display: flex;
   flex-direction: row;
 }
-.maxReached {
+.maxReached, .fullTeam {
   color: white;
   background-color: #e2b42b;
   font-family: "quicksand";
   padding: 2%;
   font-weight: bold;
+}
+.fullTeam {
+  background-color: #2be271;
 }

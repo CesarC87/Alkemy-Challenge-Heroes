@@ -13,6 +13,7 @@ const Cards = ({
   durability,
   power,
   combat,
+  alignment
 }) => {
   const {deleteHero, clearTeam} = useContext(HeroContext);
   const onRemove = () => {
@@ -37,8 +38,12 @@ const Cards = ({
           <li>speed: {speed}</li>
           <li>durability: {durability}</li>
           <li>power: {power}</li>
-          <li>combat: {intelligence}</li>
+          <li>combat: {combat}</li>
         </ul>
+        <span className={styles.alignment}>
+          Orientación: <br></br>
+          {alignment}
+        </span>
       </div>
       <hr className={styles.hr}></hr>
       <div className="bottom_card">

@@ -1,23 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import Header from "../Header/Header";
 import CardSearchContainer from "../Containers/CardSearchContainer/CardSearchContainer";
-import axios from "axios";
-import { useState, useEffect } from "react";
 import AddedHeroes from "../AddedHeroes/AddedHeroes";
+import { Link } from 'react-router-dom'
+import { HeroContext } from "../../context/TeamContext";
 
 const Home = () => {
   
+  const loggedOut = () => {
+    localStorage.removeItem('email', process.env.REACT_APP_USER_EMAIL)
+    localStorage.removeItem('password', process.env.REACT_APP_USER_PASS)
+  }
 return (
-    <div>
-      <Header />                 
-      {/* {isLoaded ? <AddedHeroes heroData={heroData} /> : <p className="cargando">Cargando...</p>} */}      
+    <>    
+      <Header />         
       <AddedHeroes/>
-      <CardSearchContainer />
-     
-    </div>
+      <CardSearchContainer />    
+      <Link to='/'>
+        <button className="ingresar" onClick={() => loggedOut()}>Log Out</button>
+      </Link>
+   </>
   );
 };
 
 export default Home;
 
-// setHeroData(heroes.map((hero) => ({ ...hero })));    

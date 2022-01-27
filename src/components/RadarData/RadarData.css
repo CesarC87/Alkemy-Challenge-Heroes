@@ -1,0 +1,20 @@
+.radar {
+  padding: 2% 0px 2% 0px;
+  border-radius: 20px;
+}
+@media screen and (min-width: 300px) and (max-width: 420px) {
+  .radar {
+    width: 60%;
+  }
+  .radar canva {
+    width: 1em;
+  }
+}
+@media screen and (min-width: 425px) {
+  
+  .radar > * {
+    width: 300px;
+    height: 300px;
+  }
+}
+  

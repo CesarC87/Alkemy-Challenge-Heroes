@@ -1,15 +1,25 @@
-import React , {useState} from "react";
+import React , {useState, useContext} from "react";
 import { Formik, Field, ErrorMessage, Form } from "formik";
 import { Link } from "react-router-dom";
 import "./Login.css"
-
+import { Container, Row, Col} from 'react-bootstrap'
+import { AuthContext } from "../../context/AuthContext";
 
 const Login = () => {
     const [success, setSuccess] = useState(false)
     const [login, setLogin] = useState(false)
     const [fail, setFail] = useState(false)
+    const {  loggedOut , isLoggedIn } = useContext(AuthContext)
+
+    const loggedIn = () => {
+      localStorage.setItem('email', process.env.REACT_APP_USER_EMAIL)
+      localStorage.setItem('password', process.env.REACT_APP_USER_PASS)      
+    }
   return (
     <>
+    <Container>
+      <Row>
+      <Col md>
     <h1 className="loginTitle">SuperHero App!</h1>
       <Formik 
       initialValues={{
@@ -69,15 +79,22 @@ const Login = () => {
           </Form>
         )}
       </Formik>
-        {success && (<div className="success">
-                      <p className="successfulSend">Bienvenido!</p>
-                        <Link to='/Home'>
-                            <button className="ingresar">Ingresar al sitio</button>
-                        </Link>
-                    </div>)}
+        {success && (         
+          loggedIn(),
+          <div className="success">                     
+            <p className="successfulSend">Bienvenido!</p>
+            <Link to='/Home'>
+              <button className="ingresar">Ingresar al sitio</button>
+            </Link>                        
+          </div>
+          ) }
         {fail && <p className="failToSend">Email o password incorrecto/s</p>}
+        </Col>
+        </Row>
+        </Container>
     </>
   );
 };
 
 export default Login;
+

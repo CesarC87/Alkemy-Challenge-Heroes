@@ -32,8 +32,7 @@ const CardDetailContainer = () => {
   }, []);
  
   return (
-    <div>
-        {console.log(heroData)} 
+    <div>        
         {isLoaded ? <CardDetail  heroData={heroData} /> : <p className="cargando">Cargando...</p>}
     </div>
   );
