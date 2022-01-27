@@ -8,7 +8,8 @@ export const AuthProvider = ( { children } ) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const emailToken = localStorage.getItem('email')
     const passwordToken = localStorage.getItem('password')
-   
+
+     
     useEffect(()=>{
         if(emailToken === process.env.REACT_APP_USER_EMAIL && passwordToken === process.env.REACT_APP_USER_PASS){
             setIsLoggedIn(true)

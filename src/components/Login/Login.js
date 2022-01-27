@@ -10,20 +10,16 @@ const Login = () => {
     const [login, setLogin] = useState(false)
     const [fail, setFail] = useState(false)
     const { isLoggedIn } = useContext(AuthContext)
-
+    
+    const Navigate = useNavigate();   
+   
     const loggedIn = () => {
       localStorage.setItem('email', process.env.REACT_APP_USER_EMAIL)
       localStorage.setItem('password', process.env.REACT_APP_USER_PASS)   
       setTimeout(() => {
         console.log(isLoggedIn);
       }, 2000);   
-    }    
-    const Navigate = useNavigate();   
-
-    // useEffect(() => {
-    //   success && loggedIn()     
-    // }, [success]); 
-    
+    }      
 
   return (
     <>
@@ -92,8 +88,10 @@ const Login = () => {
         {success && (    
             
               <div className="success">                     
-              <p className="successfulSend">Bienvenido!</p>              
-                <button className="ingresar" onClick={()=>{Navigate('/Home')}}>Ingresar al sitio</button>                                     
+              <p className="successfulSend">Bienvenido!</p>     
+              <Link to='/Home'>                 
+                <button className="ingresar">Ingresar al sitio</button>       
+               </Link>                               
               </div>   
           
           ) }
