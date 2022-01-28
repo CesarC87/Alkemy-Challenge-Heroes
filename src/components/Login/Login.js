@@ -9,17 +9,11 @@ const Login = () => {
     const [success, setSuccess] = useState(false)
     const [login, setLogin] = useState(false)
     const [fail, setFail] = useState(false)
-    const { isLoggedIn } = useContext(AuthContext)
+    const { isLoggedIn , loggedIn} = useContext(AuthContext)
     
     const Navigate = useNavigate();   
    
-    const loggedIn = () => {
-      localStorage.setItem('email', process.env.REACT_APP_USER_EMAIL)
-      localStorage.setItem('password', process.env.REACT_APP_USER_PASS)   
-      setTimeout(() => {
-        console.log(isLoggedIn);
-      }, 2000);   
-    }      
+    
 
   return (
     <>
