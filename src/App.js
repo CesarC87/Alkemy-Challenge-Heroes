@@ -1,4 +1,4 @@
-import React, { useContext} from 'react'
+import React, { useContext } from 'react'
 import './App.css';
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
@@ -10,19 +10,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
-  const { isLoggedIn } = useContext(AuthContext)     
-    
+  const { isLoggedIn } = useContext(AuthContext)
+
   return (
-    <div className="App">      
-      <HeroProvider> 
-        <BrowserRouter basename="/Alkemy-Challenge-Heroes">                    
-            <Routes>
-              <Route exact path="/" element={<Login/>} />
-              <Route exact path="/Home" element={isLoggedIn ? <Home/> : <Login/>  } />            
-              <Route exact path="/Heroe/:id" element={isLoggedIn ? <CardDetailContainer/> : <Login/> } />
-            </Routes>  
-        </BrowserRouter>                   
-      </HeroProvider>      
+    <div className="App">
+      <HeroProvider>
+        <BrowserRouter basename="/Alkemy-Challenge-Heroes">
+          <Routes>
+            <Route exact path="/" element={<Login />} />
+            <Route exact path="home" element={isLoggedIn ? <Home /> : <Login />} />
+            <Route exact path="heroe/:id" element={isLoggedIn ? <CardDetailContainer /> : <Login />} />
+          </Routes>
+        </BrowserRouter>
+      </HeroProvider>
     </div>
   );
 }
