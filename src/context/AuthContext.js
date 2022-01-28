@@ -15,15 +15,15 @@ export const AuthProvider = ( { children } ) => {
       if(userIn){
         if(emailToken === process.env.REACT_APP_USER_EMAIL && passwordToken === process.env.REACT_APP_USER_PASS){
           setIsLoggedIn(true)
-          console.log(isLoggedIn);      }
-      }
-        
+          console.log(isLoggedIn);}
+      }        
     }, [emailToken,passwordToken,isLoggedIn, userIn])
 
     const loggedIn = () => {
       localStorage.setItem('email', process.env.REACT_APP_USER_EMAIL)
       localStorage.setItem('password', process.env.REACT_APP_USER_PASS)      
       setUserIn(true)  
+      console.log(userIn);
     }      
        
     return (
