@@ -63,3 +63,27 @@
   margin: 0;
   width: fit-content;
 }
+
+@media screen and (max-width: 780px) {
+  .cardDetail {
+    flex-direction: column-reverse;
+    width: 70%;
+  }  
+  .cardDetail__der {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+  }
+  .cardDetail__izq {
+    width: 100%;
+    height: auto;
+  }
+  .cardDetail__der img {
+    object-fit: scale-down;
+    width: inherit;
+    margin: 5% 0;
+  }
+  .cardDetail__izq--description {
+    font-size:    clamp(20px, 60px,4vw);  
+  }
+}
