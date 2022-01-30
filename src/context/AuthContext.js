@@ -1,5 +1,6 @@
 import { createContext } from "react";
 import { useState , useEffect} from "react";
+import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext()
 
@@ -9,14 +10,13 @@ export const AuthProvider = ( { children } ) => {
     const emailToken = localStorage.getItem('email')
     const passwordToken = localStorage.getItem('password')
     const [userIn, setUserIn] = useState(false)
-
      
     useEffect(()=>{
       if(userIn){
         if(emailToken === process.env.REACT_APP_USER_EMAIL && passwordToken === process.env.REACT_APP_USER_PASS){
           setIsLoggedIn(true)
           console.log(isLoggedIn);}
-      }        
+      }         
     }, [emailToken,passwordToken,isLoggedIn, userIn])
 
     const loggedIn = () => {
