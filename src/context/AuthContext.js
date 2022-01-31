@@ -16,26 +16,30 @@ export const AuthProvider = ({ children }) => {
         passwordToken === process.env.REACT_APP_USER_PASS
       ) {
         setIsLoggedIn(true);        
+        setTimeout(()=>{
+          console.log('userIn: true y isLoggedIn ', isLoggedIn);
+        }, 2000)
       }
     }
     if (!userIn) {
       setIsLoggedIn(false);
+      setTimeout(()=>{
+        console.log('userIn: false y isLoggedIn ', isLoggedIn);
+      }, 2000)
     }
-  }, [userIn, isLoggedIn, emailToken, passwordToken]);
+  }, [userIn]);
 
   const loggedIn = () => {
     localStorage.setItem("email", process.env.REACT_APP_USER_EMAIL);
     localStorage.setItem("password", process.env.REACT_APP_USER_PASS);
     setUserIn(true);
-    console.log(userIn);
+    
   };
   const loggedOut = () => {
     localStorage.removeItem("email", process.env.REACT_APP_USER_EMAIL);
     localStorage.removeItem("password", process.env.REACT_APP_USER_PASS);
     setUserIn(false);
-    setTimeout(() => {
-      console.log(isLoggedIn);
-    }, 2000);
+    
   };
   return (
     <AuthContext.Provider value={{ isLoggedIn, loggedIn, loggedOut }}>
