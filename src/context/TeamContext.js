@@ -54,7 +54,7 @@ export const HeroProvider = ({ children }) => {
       },0)
   }
   const totalSpeed = () => {
-    const speed = team.map(x=>x.powerstats.intelligence)
+    const speed = team.map(x=>x.powerstats.speed)
       return speed.reduce((accumulator, number) => {
           return Number(number) + Number(accumulator);
       },0)
