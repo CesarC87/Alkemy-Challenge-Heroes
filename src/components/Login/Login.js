@@ -1,17 +1,15 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState } from "react";
 import { Formik, Field, ErrorMessage, Form } from "formik";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Login.css"
 import { Container, Row, Col } from 'react-bootstrap'
-import { AuthContext } from "../../context/AuthContext";
+import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
   const [success, setSuccess] = useState(false)
-  const [login, setLogin] = useState(false)
   const [fail, setFail] = useState(false)
-  const { isLoggedIn , loggedIn} = useContext(AuthContext)
-
-  const Navigate = useNavigate();  
+  const [login, setLogin] = useState(false)
+  const { loggedIn} = useAuth() 
 
   return (
     <>
