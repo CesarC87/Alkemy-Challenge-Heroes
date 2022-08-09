@@ -12,3 +12,5 @@ Requerimientos:
 El proyecto debe hacer correr el servidor dispuesto en la carpeta Backend, que funciona como proxy server, para sortear el problema CORS (Cross Origin Resource Sharing) puesto que el server posee un middleware especifico para ello. 
 
 Para iniciar el servidor, el usuario debe ubicarse en la carpeta Backend y acceder a la consola. Desde allí, correr el comando --> npm run dev
+
+Para acceder al sitio, ingresar en: https://cesarc87.github.io/Alkemy-Challenge-Heroes/home
